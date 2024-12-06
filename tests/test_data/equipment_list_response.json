@@ -1,0 +1,60 @@
+{
+    "code": 200,
+    "msg": "succeed",
+    "value": [
+        {
+            "facility_id": 298,
+            "facility_number": "DCDA0C826C75",
+            "facility_alias": "Main Panel",
+            "online_on": 1,
+            "online_off": 1,
+            "versions": "01.00.04",
+            "online": "1",
+            "family": {
+                "id": 539,
+                "facility_id": 298,
+                "home_name": "",
+                "address": "116 Raspberry Way, Madison, AL 35757, USA",
+                "price": "0.11",
+                "billingtime": 0,
+                "etc": "0",
+                "utc": "-6",
+                "time_name": "Central Standard Time(UTC-6)",
+                "facility_alias": "Main Panel"
+            },
+            "notification": {
+                "online_on": 1,
+                "online_off": 1
+            },
+            "home_name": "",
+            "pitch": 0
+        },
+        {
+            "facility_id": 356,
+            "facility_number": "DCDA0C826D7D",
+            "facility_alias": "Second-Panel",
+            "online_on": 1,
+            "online_off": 1,
+            "versions": "01.00.04",
+            "online": "1",
+            "family": {
+                "id": 631,
+                "facility_id": 356,
+                "home_name": "",
+                "address": "116 Raspberry Way, Madison, AL 35757, USA",
+                "price": "13.20",
+                "billingtime": 0,
+                "etc": "0",
+                "utc": "-6",
+                "time_name": "Time zone in which phone used(UTC-6)",
+                "facility_alias": "Second-Panel"
+            },
+            "notification": {
+                "online_on": 1,
+                "online_off": 1
+            },
+            "home_name": "",
+            "pitch": 0
+        }
+    ]
+}
