@@ -32,4 +32,5 @@
         "SEM_USERNAME": " ${localEnv:SEM_USERNAME}",
         "SEM_PASSWORD": "${localEnv:SEM_PASSWORD}"
     },
+    "containerUser": "vscode"
 }
