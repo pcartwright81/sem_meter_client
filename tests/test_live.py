@@ -2,9 +2,12 @@
 
 import os
 
+import pytest
+
 from sem_meter_client.sem_meter_client import SEMMeterClient
 
 
+@pytest.mark.skip(reason="Live testing disabled.")
 async def test_async() -> None:
     """Test the async login."""
     client = SEMMeterClient()

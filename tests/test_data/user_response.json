@@ -1,0 +1,15 @@
+{
+  "code": 200,
+  "msg": "succeed",
+  "value": {
+    "id": "8294",
+    "email": "test@user.com",
+    "image": "",
+    "nickname": "User1732160580",
+    "address": "",
+    "sex": "0",
+    "telephone": "",
+    "iphone": "",
+    "token": "thisisnotreal"
+  }
+}

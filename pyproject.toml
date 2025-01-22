@@ -21,4 +21,5 @@ exclude_also = [
 [tool.coverage.run]
 omit = [
     "setup.py",
+    "tests/test_live.py",
     ]

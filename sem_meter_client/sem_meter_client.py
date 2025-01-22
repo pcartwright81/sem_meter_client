@@ -1,11 +1,12 @@
 """Client for the SEM Meter API."""
 
+import json
 
 import aiohttp
 
-from .circuit import CircuitList
-from .equipment import EquipmentList
-from .user import User
+from .circuit import CircuitResponse
+from .equipment import EquipmentResponse
+from .user import UserResponse
 
 
 class SEMMeterClient:
@@ -16,7 +17,7 @@ class SEMMeterClient:
 
     current_token: str | None = None
 
-    async def login(self, username: str, password: str, timezone: str) -> User:
+    async def login(self, username: str, password: str, timezone: str) -> UserResponse:
         """Login to the SEM Meter API."""
         url = f"{self._base_url}/Login/login"
         data = {
@@ -33,9 +34,11 @@ class SEMMeterClient:
             session.post(url, data=data) as response,
         ):
             response_text = await response.text()
-            return User.read_user_response(response_text)
+            user_dict = json.loads(response_text)
+            return UserResponse.from_dict(user_dict)
 
-    async def get_equipment_list(self) -> EquipmentList:
+    async def get_equipment_list(self) -> EquipmentResponse:
+        """Get the equipment list."""
         data = {"token": self.current_token}
         url = f"{self._base_url}/Equipment/EquipmentsList"
         async with (
@@ -43,9 +46,11 @@ class SEMMeterClient:
             session.post(url, data=data) as response,
         ):
             response_text = await response.text()
-            return EquipmentList.read_equipment_response(response_text)
+            equipment_dict = json.loads(response_text)
+            return EquipmentResponse.from_dict(equipment_dict)
 
-    async def get_circuit_list(self, facility_id: str) -> CircuitList:
+    async def get_circuit_list(self, facility_id: int) -> CircuitResponse:
+        """Get the circuit list."""
         data = {"token": self.current_token, "facility_id": facility_id}
         url = f"{self._base_url}/circuit/list"
         async with (
@@ -53,4 +58,5 @@ class SEMMeterClient:
             session.post(url, data=data) as response,
         ):
             response_text = await response.text()
-            return CircuitList.read_circuit_response(response_text)
+            circuit_dict = json.loads(response_text)
+            return CircuitResponse.from_dict(circuit_dict)
